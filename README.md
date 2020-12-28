@@ -6,4 +6,4 @@ I used Math.floor and Math.random to generate the computer answer and implemente
 This was a fun project after I understood that the prompt needed to go into the loop, however with more training and knowledge, I eventually want to change it in a way that the prompt appears after each turn and then displays the result.
 
 See all requirements from The Odin Project here: 
-https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors?
+https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors
