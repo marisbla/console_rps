@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Play Rock, Paper, Scissors</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    // This is a Rock, Paper, Scissors coding challenge by the Odin Project
+
+let scorePlayer = 0;
+let scoreComputer = 0;
+
+function computerPlay() {
+ return Math.floor(Math.random() * 3); // computerPlay randomly returns the number 0, 1 or 2
+};
+
+function singleRound(playerSelection, computerSelection) {
+  if (computerSelection === 0 && playerSelection === "rock") { // 3 possible outcomes when computerSelection is 0 = rock
+     return `It's a tie! Try again! Score: Player ${scorePlayer} : Browser ${scoreComputer}`;
+  } else if (computerSelection === 0 && playerSelection === "paper") {
+      scorePlayer++;
+     return `You win! Paper beats Rock! Score: Player ${scorePlayer} : Browser ${scoreComputer}`;
+  } else if (computerSelection === 0 && playerSelection === "scissors") { 
+      scoreComputer++;
+     return `You lose! Rock beats Scissors! Score: Player ${scorePlayer} : Browser ${scoreComputer}`;
+  } else if (computerSelection === 1 && playerSelection === "rock") { // 3 possible outcomes when computerSelection is 1 = paper
+      scoreComputer++;
+     return `You lose! Paper beats Rock! Score: Player ${scorePlayer} : Browser ${scoreComputer}`;
+  } else if (computerSelection === 1 && playerSelection === "paper") {
+     return `It's a tie! Try again! Score: Player ${scorePlayer} : Browser ${scoreComputer}`;
+  } else if (computerSelection === 1 && playerSelection === "scissors") {
+      scorePlayer++;
+     return `You win! Scissors beats Paper! Score: Player ${scorePlayer} : Browser ${scoreComputer}`;
+  } else if (computerSelection === 2 && playerSelection === "rock") { // 3 possible outcomes when computerSelection is 2 = scissors
+      scorePlayer++;
+     return `You win! Rock beats Scissors! Score: Player ${scorePlayer} : Browser ${scoreComputer}`;
+  } else if (computerSelection === 2 && playerSelection === "paper") {
+      scoreComputer++;
+    return `You lose! Scissors beats Paper! Score: Player ${scorePlayer} : Browser ${scoreComputer}`;
+  } else if (computerSelection === 2 && playerSelection === "scissors") {
+    return `It's a tie! Try again! Score: Player ${scorePlayer} : Browser ${scoreComputer}`;
+}
+}
+
+function game(singleRound) {
+  for (let i = 5; i > 0; i--) {
+    const playerSelection = prompt("To start this game, choose your shape: Rock, Paper or Scissors!").toLowerCase();
+const computerSelection = computerPlay();
+    console.log(singleRound(playerSelection,computerSelection))
+  }
+    if (scorePlayer === scoreComputer) {
+      console.log(`The endresult of this round is a tie. Try again! End Score: Player ${scorePlayer} : Browser ${scoreComputer}`);
+    } else if (scorePlayer < scoreComputer) {
+      console.log(`The Browser wins this round. Better luck next time! End Score: Player ${scorePlayer} : Browser ${scoreComputer}`);
+    } else if (scorePlayer > scoreComputer) {
+      console.log(`Yas! You win - congratulations! End Score: Player ${scorePlayer} : Browser ${scoreComputer}`);
+    }
+}
+
+game(singleRound);
+
+  </script>
+</body>
+</html>
